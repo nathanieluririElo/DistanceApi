@@ -50,6 +50,7 @@ class User(BaseModel):
     pick_up_details: dict
     drop_off_details: dict
     schedule: dict
+    image_id:int
 
 class MongoDB:
     def __init__(self):
@@ -84,6 +85,7 @@ class MongoDB:
             "pick_up_details":user_data.pick_up_details,
             "drop_off_details":user_data.drop_off_details,
             "schedule":user_data.schedule,
+            "image_id":user_data.image_id
         })
         
         # Insert the user data into the users collection
