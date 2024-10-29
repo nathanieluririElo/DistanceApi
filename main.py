@@ -43,6 +43,8 @@ class User(BaseModel):
     - pick_up_details (dict): Details about the pickup location.
     - drop_off_details (dict): Details about the drop-off location.
     - schedule (dict): Scheduling details for the delivery.
+    - image_id (int): Id of Image link user uploaded.
+    - additional_info (str): Contains details of additional Directions to pick up destination and delivery destination.
     """
     name: str
     phone_number: str
@@ -51,6 +53,7 @@ class User(BaseModel):
     drop_off_details: dict
     schedule: dict
     image_id:int
+    additional_info: str
 
 class MongoDB:
     def __init__(self):
@@ -85,7 +88,8 @@ class MongoDB:
             "pick_up_details":user_data.pick_up_details,
             "drop_off_details":user_data.drop_off_details,
             "schedule":user_data.schedule,
-            "image_id":user_data.image_id
+            "image_id":user_data.image_id,
+            "additional_info":user_data.additional_info
         })
         
         # Insert the user data into the users collection
